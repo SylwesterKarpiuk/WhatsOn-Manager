@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhatsOnManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="465" Width="800">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Width="100px"></TextBlock>
+        Title="MainWindow" Height="165" Width="200"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Width="60px" Height="20px">Login:</TextBlock>
+            <TextBox Name="LoginField" Width="100px" Height="20px" KeyDown="OnEnter"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Width="60px" Height="20px">Password:</TextBlock>
+            <PasswordBox Name="PasswordField" Width="100px" Height="20px" KeyDown="OnEnter"></PasswordBox>
+        </StackPanel>
+        <Button Name="SignInButton" Margin="0 15 0 0" Click="SignInButton_Click">Sign in</Button>
     </StackPanel>
 
 </Window>

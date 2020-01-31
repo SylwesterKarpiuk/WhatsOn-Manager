@@ -24,5 +24,16 @@ namespace WhatsOnManager
         {
             InitializeComponent();
         }
+        private void OnEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                SignInButton_Click(sender, e);
+            }
+        }
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("test");
+        }
     }
 }
