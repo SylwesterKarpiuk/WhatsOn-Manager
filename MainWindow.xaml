@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
     <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Width="60px" Height="20px">Login:</TextBlock>
+            <TextBlock Width="60px" Height="20px">Email:</TextBlock>
             <TextBox Name="LoginField" Width="100px" Height="20px" KeyDown="OnEnter"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">

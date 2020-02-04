@@ -1,0 +1,38 @@
+﻿<Window x:Class="WhatsOnManager.Views.IngredientCategoryManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WhatsOnManager.Views"
+        mc:Ignorable="d"
+        Title="IngredientCategoryManagerWindow" Height="420" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Margin="50" Width="300px">
+            <StackPanel>
+                <TextBlock FontSize="30px" TextAlignment="Center">Kategorie</TextBlock>
+                <ListView Margin="10" Width="280" Name="CategoryListView" Height="200px">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Nazwa" Width="280" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="BackButton" Click="BackButtonClicked" Width="60px" Height="25px">Powrót</Button>
+                <Button Name="RefreshButton" Click="RefreshButtonClicked" Width="60px" Height="25px">Odśwież</Button>
+                <Button Name="DeleteButton" Click="DeleteButtonClicked" Width="60px" Height="25px">Usuń</Button>
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Orientation="Vertical"  Width="300px" VerticalAlignment="Center" Margin="0 0 0 80" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Margin="10" Width="50px" Height="30px" FontSize="15" Padding="0 5 0 0">Nazwa:</TextBlock>
+                <TextBox x:Name="NewCategoryReader" Margin="10" Width="150px" Height="30px" FontSize="20" Padding="5 0 0 0"></TextBox>
+            </StackPanel>
+            <Button x:Name="AddCategoryButton" Click="AddCategoryButtonClicked" Width="150px" Height="25">Dodaj</Button>
+        </StackPanel>
+    </StackPanel>
+
+</Window>
