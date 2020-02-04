@@ -19,20 +19,23 @@ namespace WhatsOnManager.Views
         public IngredientCategoryManagerWindow()
         {
             InitializeComponent();
-            CategoryListView.ItemsSource = LoadIngredientsList();
-
+            LoadIngredientsList();
         }
 
         private void BackButtonClicked(object sender, RoutedEventArgs e)
-        { }
+        {
+            MenuWindow mainMenu = new MenuWindow();
+            mainMenu.Show();
+            this.Close();
+        }
         private void RefreshButtonClicked(object sender, RoutedEventArgs e)
         {
-            CategoryListView.ItemsSource = LoadIngredientsList();
+            LoadIngredientsList();
         }
         private void DeleteButtonClicked(object sender, RoutedEventArgs e)
         {
-            
-            string sql = "Delete from IngredientsCategory where Name = \'" + CategoryListView.SelectedItem + "\';";
+            IngredientsCategoryViewModel cat = (IngredientsCategoryViewModel)CategoryListView.SelectedItem;
+            string sql = "Delete from IngredientsCategory where Name = \'" + cat.Name + "\';";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);
@@ -40,7 +43,7 @@ namespace WhatsOnManager.Views
             {
                 reader = command.ExecuteReader();
                 connection.Close();
-                CategoryListView.ItemsSource = LoadIngredientsList();
+                LoadIngredientsList();
             }
             catch (Exception ex)
             {
@@ -60,7 +63,8 @@ namespace WhatsOnManager.Views
                 {
                     reader = command.ExecuteReader();
                     connection.Close();
-                    CategoryListView.ItemsSource = LoadIngredientsList();
+                    LoadIngredientsList();
+                    NewCategoryReader.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -68,7 +72,7 @@ namespace WhatsOnManager.Views
                 }
             }
         }
-        private List<IngredientsCategoryViewModel> LoadIngredientsList()
+        private void LoadIngredientsList()
         {
             string sql = "Select name from IngredientsCategory;";
             connection = new SqlConnection(Settings.connectionString);
@@ -83,12 +87,15 @@ namespace WhatsOnManager.Views
                     ingredientsCategoryList.Add(new IngredientsCategoryViewModel() { Name = reader.GetString(0) });
                 }
                 connection.Close();
+                CategoryListView.ItemsSource = ingredientsCategoryList;
+                if (((List<IngredientsCategoryViewModel>)CategoryListView.ItemsSource).Count>0){
+                CategoryListView.SelectedItem = ((List<IngredientsCategoryViewModel>)CategoryListView.ItemsSource)[0];
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Błąd połączenia: " + ex.ToString());
             }
-            return ingredientsCategoryList;
         }
     }
 }

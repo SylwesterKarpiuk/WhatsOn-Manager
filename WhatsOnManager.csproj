@@ -55,13 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ConnectionString.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ViewModel\IngredientsCategoryViewModel.cs" />
     <Compile Include="Views\IngredientCategoryManagerWindow.xaml.cs">
       <DependentUpon>IngredientCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IngredientManageWindow.xaml.cs">
       <DependentUpon>IngredientManageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IngredientSubcategoryManagerWindow.xaml.cs">
+      <DependentUpon>IngredientSubcategoryManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\IngredientManageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IngredientSubcategoryManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

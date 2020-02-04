@@ -43,7 +43,6 @@ namespace WhatsOnManager
             SqlDataReader reader;
             string sql = "Select id from Logins where Email = \'" + LoginField.Text + "\' and CAST(Password as varbinary(255)) = CAST(\'" + PasswordField.Password + "\' as varbinary(255))";
             command = new SqlCommand(sql, connection);
-
             try
             {
                 reader = command.ExecuteReader();
