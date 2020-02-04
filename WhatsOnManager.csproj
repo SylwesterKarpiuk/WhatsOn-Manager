@@ -57,12 +57,13 @@
     </ApplicationDefinition>
     <Compile Include="Settings.cs" />
     <Compile Include="ViewModel\IngredientsCategoryViewModel.cs" />
+    <Compile Include="ViewModel\IngredientSchema.cs" />
     <Compile Include="ViewModel\IngredientsSubcategoryViewModel.cs" />
     <Compile Include="Views\IngredientCategoryManagerWindow.xaml.cs">
       <DependentUpon>IngredientCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\IngredientManageWindow.xaml.cs">
-      <DependentUpon>IngredientManageWindow.xaml</DependentUpon>
+    <Compile Include="Views\IngredientManagerWindow.xaml.cs">
+      <DependentUpon>IngredientManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IngredientSubcategoryManagerWindow.xaml.cs">
       <DependentUpon>IngredientSubcategoryManagerWindow.xaml</DependentUpon>
@@ -86,7 +87,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\IngredientManageWindow.xaml">
+    <Page Include="Views\IngredientManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

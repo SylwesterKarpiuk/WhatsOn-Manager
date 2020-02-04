@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WhatsOnManager.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy IngredientManageWindow.xaml
+    /// Interaction logic for IngredientManagerWindow.xaml
     /// </summary>
-    public partial class IngredientManageWindow : Window
+    public partial class IngredientManagerWindow : Window
     {
-        public IngredientManageWindow()
+        public IngredientManagerWindow()
         {
             InitializeComponent();
         }
