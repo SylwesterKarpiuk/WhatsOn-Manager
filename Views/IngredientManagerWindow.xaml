@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhatsOnManager.Views"
         mc:Ignorable="d"
-        Title="IngredientManagerWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="IngredientManagerWindow" Height="460" Width="800">
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-        <StackPanel Orientation="Vertical"  Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical"  Width="400px" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock FontSize="30px" TextAlignment="Center">Składniki:</TextBlock>
-            <ListView Margin="10" Width="280" Name="IngredientsListView" Height="200px">
+            <ListView Margin="0 10 0 10" Width="400" Name="IngredientsListView" Height="200px">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Nazwa" Width="140" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Kategoria" Width="140" DisplayMemberBinding="{Binding CategoryName}" />
-                        <GridViewColumn Header="Kategoria" Width="140" DisplayMemberBinding="{Binding SubcategoryName}" />
+                        <GridViewColumn Header="Kategoria" Width="120" DisplayMemberBinding="{Binding CategoryName}" />
+                        <GridViewColumn Header="Podkategoria" Width="120" DisplayMemberBinding="{Binding SubcategoryName}" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -24,26 +25,28 @@
                 <Button Name="DeleteButton" Click="DeleteButtonClicked" Width="60px" Height="25px">Usuń</Button>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="50 10 0 10" Width="300px">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Margin="10" Width="50px" Height="30px" FontSize="15" Padding="0 5 0 0">Nazwa:</TextBlock>
-                <TextBox x:Name="NewSubcategoryReader" Margin="10" Width="150px" Height="30px" FontSize="20" Padding="5 0 0 0"></TextBox>
-            </StackPanel>
-            <Button x:Name="AddCategoryButton" Click="AddSubcategoryButtonClicked" Width="150px" Height="25">Dodaj</Button>
-            <ListView Margin="10" Width="280" Name="CategoryListView" Height="100px">
+        <StackPanel Margin="25 10 0 10" Width="300px">
+
+            <ListView PreviewMouseLeftButtonUp="CategoryListViewChosen" Margin="10" Width="280" Name="CategoryListView" Height="100px">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Kategoria" Width="260" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Kategoria" Width="270" DisplayMemberBinding="{Binding Name}" />
                     </GridView>
                 </ListView.View>
+
             </ListView>
             <ListView Margin="10" Width="280" Name="SubcategoryListView" Height="180px">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Podkategoria" Width="260" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Podkategoria" Width="270" DisplayMemberBinding="{Binding Name}" />
                     </GridView>
                 </ListView.View>
             </ListView>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Margin="10" Width="50px" Height="30px" FontSize="15" Padding="0 5 0 0">Nazwa:</TextBlock>
+                <TextBox x:Name="NewIngredientReader" Margin="10" Width="150px" Height="30px" FontSize="20" Padding="5 0 0 0"></TextBox>
+            </StackPanel>
+            <Button x:Name="AddCategoryButton" Click="AddIngredientButtonClicked" Width="150px" Height="25">Dodaj</Button>
         </StackPanel>
 
     </StackPanel>

@@ -71,7 +71,7 @@ namespace WhatsOnManager.Views
         private void DeleteButtonClicked(object sender, RoutedEventArgs e)
         {
             IngredientsSubcategoryViewModel cat = (IngredientsSubcategoryViewModel)SubcategoryListView.SelectedItem;
-            string sql = "Delete from IngredientsSubcategory where Name = \'" + cat.Name + "\';";
+            string sql = "Delete from IngredientsSubcategory where name = \'" + cat.Name + "\';";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);

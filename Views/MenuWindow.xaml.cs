@@ -25,7 +25,9 @@ namespace WhatsOnManager.Views
         }
         public void IngredientManagerButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            IngredientManagerWindow menu = new IngredientManagerWindow();
+            menu.Show();
+            this.Close();
         }
         public void IngredientCategoryManagerButtonClicked(object sender, RoutedEventArgs e)
         {

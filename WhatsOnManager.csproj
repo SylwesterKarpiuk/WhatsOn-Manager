@@ -57,8 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="Settings.cs" />
     <Compile Include="ViewModel\IngredientsCategoryViewModel.cs" />
-    <Compile Include="ViewModel\IngredientSchema.cs" />
     <Compile Include="ViewModel\IngredientsSubcategoryViewModel.cs" />
+    <Compile Include="ViewModel\IngredientsViewModel.cs" />
     <Compile Include="Views\IngredientCategoryManagerWindow.xaml.cs">
       <DependentUpon>IngredientCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
