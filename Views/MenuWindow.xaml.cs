@@ -35,7 +35,9 @@ namespace WhatsOnManager.Views
         }
         public void IngredientSubcategoryManagerButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            IngredientSubcategoryManagerWindow menu = new IngredientSubcategoryManagerWindow();
+            menu.Show();
+            this.Close();
         }
         public void RecipeManagerButtonClicked(object sender, RoutedEventArgs e)
         {

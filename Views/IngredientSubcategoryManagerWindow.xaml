@@ -9,10 +9,10 @@
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <StackPanel Orientation="Vertical"  Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock FontSize="30px" TextAlignment="Center">Podkategorie</TextBlock>
-            <ListView Margin="10" Width="280" Name="SubategoryListView" Height="200px">
+            <ListView Margin="10" Width="280" Name="SubcategoryListView" Height="200px">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Nazwa" Width="140" DisplayMemberBinding="{Binding SubCategoryName}" />
+                        <GridViewColumn Header="Nazwa" Width="140" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Kategoria" Width="140" DisplayMemberBinding="{Binding CategoryName}" />
                     </GridView>
                 </ListView.View>
@@ -26,13 +26,13 @@
         <StackPanel Margin="50" Width="300px">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Margin="10" Width="50px" Height="30px" FontSize="15" Padding="0 5 0 0">Nazwa:</TextBlock>
-                <TextBox x:Name="NewCategoryReader" Margin="10" Width="150px" Height="30px" FontSize="20" Padding="5 0 0 0"></TextBox>
+                <TextBox x:Name="NewSubcategoryReader" Margin="10" Width="150px" Height="30px" FontSize="20" Padding="5 0 0 0"></TextBox>
             </StackPanel>
-            <Button x:Name="AddCategoryButton" Click="AddCategoryButtonClicked" Width="150px" Height="25">Dodaj</Button>
+            <Button x:Name="AddCategoryButton" Click="AddSubcategoryButtonClicked" Width="150px" Height="25">Dodaj</Button>
             <ListView Margin="10" Width="280" Name="CategoryListView" Height="200px">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Nazwa kategorii" Width="260" DisplayMemberBinding="{Binding SubCategoryName}" />
+                        <GridViewColumn Header="Nazwa kategorii" Width="260" DisplayMemberBinding="{Binding Name}" />
                     </GridView>
                 </ListView.View>
             </ListView>
