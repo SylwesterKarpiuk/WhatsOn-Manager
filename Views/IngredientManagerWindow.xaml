@@ -14,8 +14,8 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Nazwa" Width="140" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Kategoria" Width="120" DisplayMemberBinding="{Binding CategoryName}" />
-                        <GridViewColumn Header="Podkategoria" Width="120" DisplayMemberBinding="{Binding SubcategoryName}" />
+                        <GridViewColumn Header="Podategoria" Width="120" DisplayMemberBinding="{Binding CategoryName}" />
+                        <GridViewColumn Header="Kategoria" Width="120" DisplayMemberBinding="{Binding SubcategoryName}" />
                     </GridView>
                 </ListView.View>
             </ListView>

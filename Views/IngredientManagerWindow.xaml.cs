@@ -42,7 +42,7 @@ namespace WhatsOnManager.Views
         }
         private void LoadIngredientsList()
         {
-            string sql = "Select name, category_name, main_category_name from IngredientsList;";
+            string sql = "Select name, category_name, subcategory_name from IngredientsList;";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);
@@ -64,7 +64,7 @@ namespace WhatsOnManager.Views
         }
         private void LoadSubcategoriesList(string categoryName)
         {
-            string sql = "Select name, category_name from IngredientsSubcategory where category_name = \'" + categoryName + "\';";
+            string sql = "Select name, category_name from IngredientsSubcategory where category_name = N\'" + categoryName + "\';";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);
@@ -114,7 +114,7 @@ namespace WhatsOnManager.Views
         private void DeleteButtonClicked(object sender, RoutedEventArgs e)
         {
             IngredientsViewModel cat = (IngredientsViewModel)IngredientsListView.SelectedItem;
-            string sql = "Delete from IngredientsList where name = \'" + cat.Name + "\';";
+            string sql = "Delete from IngredientsList where name = N\'" + cat.Name + "\';";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);
@@ -139,7 +139,7 @@ namespace WhatsOnManager.Views
                 {
                     connection = new SqlConnection(Settings.connectionString);
                     connection.Open();
-                    string sql = "select name from IngredientsList where name = \'" + NewIngredientReader.Text + "\'";
+                    string sql = "select name from IngredientsList where name = N\'" + NewIngredientReader.Text + "\'";
                     command = new SqlCommand(sql, connection);
                     try
                     {
@@ -160,7 +160,7 @@ namespace WhatsOnManager.Views
                         MessageBox.Show("Błąd połączenia: " + ex.ToString());
                     }
                    
-                    sql = "Insert into IngredientsList values (\'" + NewIngredientReader.Text + "\', \'" + cat.Name + "\', \'" + subcat.Name + "\');";
+                    sql = "Insert into IngredientsList values (N\'" + NewIngredientReader.Text + "\', N\'" + cat.Name + "\', N\'" + subcat.Name + "\');";
                     connection.Open();
                     command = new SqlCommand(sql, connection);
                     List<string> ingredientsCategoryList = new List<string>();

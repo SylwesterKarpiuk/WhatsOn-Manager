@@ -35,7 +35,7 @@ namespace WhatsOnManager.Views
         private void DeleteButtonClicked(object sender, RoutedEventArgs e)
         {
             IngredientsCategoryViewModel cat = (IngredientsCategoryViewModel)CategoryListView.SelectedItem;
-            string sql = "Delete from IngredientsCategory where name = \'" + cat.Name + "\';";
+            string sql = "Delete from IngredientsCategory where name = N\'" + cat.Name + "\';";
             connection = new SqlConnection(Settings.connectionString);
             connection.Open();
             command = new SqlCommand(sql, connection);
@@ -54,7 +54,7 @@ namespace WhatsOnManager.Views
         {
             if (!String.IsNullOrEmpty(NewCategoryReader.Text))
             {
-                string sql = "Insert into IngredientsCategory values (\'" + NewCategoryReader.Text + "\');";
+                string sql = "Insert into IngredientsCategory values (N\'" + NewCategoryReader.Text + "\');";
                 connection = new SqlConnection(Settings.connectionString);
                 connection.Open();
                 command = new SqlCommand(sql, connection);
