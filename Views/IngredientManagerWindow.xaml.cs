@@ -184,7 +184,11 @@ namespace WhatsOnManager.Views
         {
 
                 cat = (IngredientsCategoryViewModel)CategoryListView.SelectedItem;
+            if(cat.Name != null)
+            {
                 LoadSubcategoriesList(cat.Name);
+            }
+               
            
         }
     }

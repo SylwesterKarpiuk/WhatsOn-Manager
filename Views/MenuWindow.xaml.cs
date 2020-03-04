@@ -43,7 +43,9 @@ namespace WhatsOnManager.Views
         }
         public void RecipeManagerButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            RecipeManagerWindow menu = new RecipeManagerWindow();
+            menu.Show();
+            this.Close();
         }
         public void RecipeCategoryButtonClicked(object sender, RoutedEventArgs e)
         {
